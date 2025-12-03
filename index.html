@@ -3,354 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>विदेशा वडावाले - Vidisha Vadewale | Best Vada Pav in Chhatrapati Sambhajinagar</title>
-    <meta name="description" content="विदेशा वडावाले - छत्रपती संभाजीनगर मधील सर्वोत्तम वडापाव, समोसा, दाबेली आणि चहा. नाही जाणार पैसे वेस्ट.. एकदा आमचा वडा करा टेस्ट!">
+    <title>विदिशा वडेवाले - घरगुती पदार्थ</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f8f9fa; }
-        .header { background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); color: white; padding: 2rem 1rem; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: relative; }
-        .header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
-        .tagline { font-size: 1.2rem; font-style: italic; margin-top: 0.5rem; opacity: 0.95; }
-        .cart-icon { position: fixed; top: 20px; right: 20px; background: #25D366; color: white; padding: 1rem; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; transition: all 0.3s ease; }
-        .cart-icon:hover { transform: scale(1.1); background: #128C7E; }
-        .cart-count { position: absolute; top: -5px; right: -5px; background: #ff0000; color: white; border-radius: 50%; width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; }
-        .contact-bar { background: #fff; padding: 1rem; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; }
-        .contact-item { display: flex; align-items: center; gap: 0.5rem; }
-        .contact-item a { color: #ff9800; text-decoration: none; font-weight: 600; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
-        .section { background: white; margin: 2rem 0; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .section h2 { color: #ff9800; margin-bottom: 1.5rem; font-size: 2rem; border-bottom: 3px solid #ff9800; padding-bottom: 0.5rem; }
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
-        .gallery img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
-        .gallery img:hover { transform: scale(1.05); }
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
-        .menu-item { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); padding: 1.5rem; border-radius: 8px; border: 2px solid #ff9800; transition: all 0.3s ease; }
-        .menu-item:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(255, 152, 0, 0.3); }
-        .menu-item h3 { color: #e65100; font-size: 1.3rem; margin-bottom: 0.5rem; text-align: center; }
-        .menu-item .price { color: #ff6f00; font-size: 1.5rem; font-weight: bold; text-align: center; display: block; margin: 0.5rem 0; }
-        .quantity-controls { display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 1rem 0; }
-        .quantity-btn { background: #ff9800; color: white; border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; font-weight: bold; transition: all 0.3s ease; }
-        .quantity-btn:hover { background: #f57c00; transform: scale(1.1); }
-        .quantity-display { font-size: 1.2rem; font-weight: bold; min-width: 30px; text-align: center; }
-        .add-to-cart-btn { background: #25D366; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-size: 1rem; font-weight: bold; width: 100%; transition: all 0.3s ease; }
-        .add-to-cart-btn:hover { background: #128C7E; transform: scale(1.05); }
-        .cart-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; }
-        .cart-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 2rem; border-radius: 12px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto; }
-        .cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 2px solid #ff9800; padding-bottom: 1rem; }
-        .close-cart { background: #ff0000; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem; border-bottom: 1px solid #eee; }
-        .cart-item-details { flex: 1; }
-        .cart-item-name { font-weight: bold; color: #e65100; }
-        .cart-item-price { color: #666; font-size: 0.9rem; }
-        .cart-item-remove { background: #ff0000; color: white; border: none; padding: 0.3rem 0.8rem; border-radius: 5px; cursor: pointer; font-size: 0.8rem; }
-        .cart-total { margin-top: 1.5rem; padding-top: 1rem; border-top: 2px solid #ff9800; font-size: 1.3rem; font-weight: bold; text-align: right; color: #e65100; }
-        .checkout-btn { background: #25D366; color: white; border: none; padding: 1rem 2rem; border-radius: 25px; cursor: pointer; font-size: 1.2rem; font-weight: bold; width: 100%; margin-top: 1rem; transition: all 0.3s ease; }
-        .checkout-btn:hover { background: #128C7E; transform: scale(1.05); }
-        .empty-cart { text-align: center; padding: 2rem; color: #999; }
-        .map-container { margin-top: 1.5rem; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .map-container iframe { width: 100%; height: 400px; border: none; }
-        .timing-box { background: #e8f5e9; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4caf50; margin-top: 1rem; }
-        .timing-box h3 { color: #2e7d32; margin-bottom: 0.5rem; }
-        .timing-box p { font-size: 1.1rem; color: #1b5e20; }
-        .footer { background: #333; color: white; text-align: center; padding: 2rem 1rem; margin-top: 3rem; }
-        .footer p { margin: 0.5rem 0; }
-        @media (max-width: 768px) {
-            .header h1 { font-size: 1.8rem; }
-            .tagline { font-size: 1rem; }
-            .contact-bar { flex-direction: column; gap: 1rem; }
-            .section { padding: 1.5rem; }
-            .section h2 { font-size: 1.5rem; }
-            .cart-content { width: 95%; padding: 1.5rem; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .menu-item {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .menu-item h2 {
+            color: #d63031;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+        
+        .menu-item p {
+            color: #2d3436;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        
+        .price {
+            color: #00b894;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-top: 10px;
+        }
+
+        .payment-section {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .payment-section h2 {
+            color: #d63031;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .qr-code {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .payment-info {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .payment-info p {
+            color: #2d3436;
+            font-size: 1.1em;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .important-note {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .important-note h3 {
+            color: #856404;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .important-note p {
+            color: #856404;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+
+        .important-note strong {
+            color: #d63031;
+        }
+        
+        .contact {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        
+        .contact h2 {
+            color: #d63031;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .contact-info {
+            font-size: 1.2em;
+            color: #2d3436;
+            margin: 10px 0;
+        }
+        
+        .contact-info a {
+            color: #0984e3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .order-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .order-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .menu-item h2 {
+                font-size: 1.5em;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="cart-icon" onclick="toggleCart()">
-        🛒
-        <span class="cart-count" id="cartCount">0</span>
-    </div>
-
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-content">
-            <div class="cart-header">
-                <h2 style="color: #ff9800; margin: 0;">🛒 तुमची ऑर्डर</h2>
-                <button class="close-cart" onclick="toggleCart()">बंद करा</button>
-            </div>
-            <div id="cartItems"></div>
-            <div class="cart-total" id="cartTotal">एकूण: ₹0</div>
-            <button class="checkout-btn" onclick="checkout()">📱 WhatsApp वर ऑर्डर पाठवा</button>
-        </div>
-    </div>
-
-    <div class="header">
-        <h1>🍔 विदेशा वडावाले 🍔</h1>
-        <p class="tagline">नाही जाणार पैसे वेस्ट.. एकदा आमचा वडा करा टेस्ट!</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">प्रो.प्रा.सौ.कमल सुनील भारुड | || श्री स्वामी समर्थ ||</p>
-    </div>
-    
-    <div class="contact-bar">
-        <div class="contact-item">📞 <a href="tel:+919860564165">+91 9860 5641 65</a></div>
-        <div class="contact-item">📧 <a href="mailto:divekamal922@gmail.com">divekamal922@gmail.com</a></div>
-    </div>
-    
     <div class="container">
-        <div class="section">
-            <h2>📸 आमची दुकान</h2>
-            <div class="gallery">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/a7ef205c-b4f4-42af-8275-ae57d0d48ebf/2025-12-03T10-24-00-591Z-495a7ef4-chat-image-1764757440565-3.jpg" alt="विदेशा वडावाले">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/a7ef205c-b4f4-42af-8275-ae57d0d48ebf/2025-12-03T10-24-00-378Z-3758d3b1-chat-image-1764757440357-2.jpg" alt="विदेशा वडावाले">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/a7ef205c-b4f4-42af-8275-ae57d0d48ebf/2025-12-03T10-24-00-099Z-2a559e6f-chat-image-1764757440079-0.jpg" alt="विदेशा वडावाले">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/a7ef205c-b4f4-42af-8275-ae57d0d48ebf/2025-12-03T10-24-00-210Z-4d380bee-chat-image-1764757440187-1.jpg" alt="विदेशा वडावाले">
-            </div>
+        <div class="header">
+            <h1>🍽️ विदिशा वडेवाले 🍽️</h1>
+            <p>घरगुती चविष्ट पदार्थ</p>
         </div>
         
-        <div class="section">
-            <h2>🍽️ आमचा मेनू - ऑनलाईन ऑर्डर करा</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <h3>वडापाव</h3>
-                    <p class="price">₹20</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn" onclick="changeQuantity('वडापाव', -1)">-</button>
-                        <span class="quantity-display" id="qty-वडापाव">0</span>
-                        <button class="quantity-btn" onclick="changeQuantity('वडापाव', 1)">+</button>
-                    </div>
-                    <button class="add-to-cart-btn" onclick="addToCart('वडापाव', 20)">🛒 Add to Cart</button>
-                </div>
-                <div class="menu-item">
-                    <h3>ब्रेड वडा</h3>
-                    <p class="price">₹20</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn" onclick="changeQuantity('ब्रेड वडा', -1)">-</button>
-                        <span class="quantity-display" id="qty-ब्रेड वडा">0</span>
-                        <button class="quantity-btn" onclick="changeQuantity('ब्रेड वडा', 1)">+</button>
-                    </div>
-                    <button class="add-to-cart-btn" onclick="addToCart('ब्रेड वडा', 20)">🛒 Add to Cart</button>
-                </div>
-                <div class="menu-item">
-                    <h3>चीज वडापाव</h3>
-                    <p class="price">₹35</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn" onclick="changeQuantity('चीज वडापाव', -1)">-</button>
-                        <span class="quantity-display" id="qty-चीज वडापाव">0</span>
-                        <button class="quantity-btn" onclick="changeQuantity('चीज वडापाव', 1)">+</button>
-                    </div>
-                    <button class="add-to-cart-btn" onclick="addToCart('चीज वडापाव', 35)">🛒 Add to Cart</button>
-                </div>
-                <div class="menu-item">
-                    <h3>समोसा</h3>
-                    <p class="price">₹20</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn" onclick="changeQuantity('समोसा', -1)">-</button>
-                        <span class="quantity-display" id="qty-समोसा">0</span>
-                        <button class="quantity-btn" onclick="changeQuantity('समोसा', 1)">+</button>
-                    </div>
-                    <button class="add-to-cart-btn" onclick="addToCart('समोसा', 20)">🛒 Add to Cart</button>
-                </div>
-                <div class="menu-item">
-                    <h3>भजी</h3>
-                    <p class="price">₹25</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn" onclick="changeQuantity('भजी', -1)">-</button>
-                        <span class="quantity-display" id="qty-भजी">0</span>
-                        <button class="quantity-btn" onclick="changeQuantity('भजी', 1)">+</button>
-                    </div>
-                    <button class="add-to-cart-btn" onclick="addToCart('भजी', 25)">🛒 Add to Cart</button>
-                </div>
-                <div class="menu-item">
-                    <h3>पाव वडा</h3>
-                    <p class="price">₹20</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn" onclick="changeQuantity('पाव वडा', -1)">-</button>
-                        <span class="quantity-display" id="qty-पाव वडा">0</span>
-                        <button class="quantity-btn" onclick="changeQuantity('पाव वडा', 1)">+</button>
-                    </div>
-                    <button class="add-to-cart-btn" onclick="addToCart('पाव वडा', 20)">🛒 Add to Cart</button>
-                </div>
-                <div class="menu-item">
-                    <h3>स्पेशल दाबेली</h3>
-                    <p class="price">₹20</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn" onclick="changeQuantity('स्पेशल दाबेली', -1)">-</button>
-                        <span class="quantity-display" id="qty-स्पेशल दाबेली">0</span>
-                        <button class="quantity-btn" onclick="changeQuantity('स्पेशल दाबेली', 1)">+</button>
-                    </div>
-                    <button class="add-to-cart-btn" onclick="addToCart('स्पेशल दाबेली', 20)">🛒 Add to Cart</button>
-                </div>
-                <div class="menu-item">
-                    <h3>चहा</h3>
-                    <p class="price">₹10</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn" onclick="changeQuantity('चहा', -1)">-</button>
-                        <span class="quantity-display" id="qty-चहा">0</span>
-                        <button class="quantity-btn" onclick="changeQuantity('चहा', 1)">+</button>
-                    </div>
-                    <button class="add-to-cart-btn" onclick="addToCart('चहा', 10)">🛒 Add to Cart</button>
-                </div>
-                <div class="menu-item">
-                    <h3>कॉफी</h3>
-                    <p class="price">₹20</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn" onclick="changeQuantity('कॉफी', -1)">-</button>
-                        <span class="quantity-display" id="qty-कॉफी">0</span>
-                        <button class="quantity-btn" onclick="changeQuantity('कॉफी', 1)">+</button>
-                    </div>
-                    <button class="add-to-cart-btn" onclick="addToCart('कॉफी', 20)">🛒 Add to Cart</button>
-                </div>
-                <div class="menu-item">
-                    <h3>लस्सी</h3>
-                    <p class="price">₹30</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn" onclick="changeQuantity('लस्सी', -1)">-</button>
-                        <span class="quantity-display" id="qty-लस्सी">0</span>
-                        <button class="quantity-btn" onclick="changeQuantity('लस्सी', 1)">+</button>
-                    </div>
-                    <button class="add-to-cart-btn" onclick="addToCart('लस्सी', 30)">🛒 Add to Cart</button>
+        <div class="content">
+            <div class="menu-item">
+                <h2>🥟 वडे</h2>
+                <p>ताजे आणि कुरकुरीत घरगुती वडे</p>
+                <p class="price">₹ किंमत संपर्कासाठी</p>
+            </div>
+            
+            <div class="menu-item">
+                <h2>🍪 चकली</h2>
+                <p>पारंपरिक पद्धतीने बनवलेली चवदार चकली</p>
+                <p class="price">₹ किंमत संपर्कासाठी</p>
+            </div>
+            
+            <div class="menu-item">
+                <h2>🥠 करंजी</h2>
+                <p>गोड आणि चवदार करंजी</p>
+                <p class="price">₹ किंमत संपर्कासाठी</p>
+            </div>
+            
+            <div class="menu-item">
+                <h2>🍬 इतर पदार्थ</h2>
+                <p>विविध प्रकारचे घरगुती फराळ आणि मिठाई</p>
+                <p class="price">₹ किंमत संपर्कासाठी</p>
+            </div>
+
+            <div class="important-note">
+                <h3>⚠️ महत्वाची सूचना</h3>
+                <p><strong>📞 कृपया ऑर्डर कन्फर्म करण्यासाठी आम्हाला कॉल करा</strong></p>
+                <p><strong>💳 पेमेंट करूनच ऑर्डर कन्फर्म होईल</strong></p>
+            </div>
+
+            <div class="payment-section">
+                <h2>💳 पेमेंट करा</h2>
+                <p style="color: #2d3436; font-size: 1.1em; margin-bottom: 15px;">
+                    खालील Paytm QR Code स्कॅन करून पेमेंट करा
+                </p>
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/66cb6bb8-daa3-473a-a1af-b4b3010e8fcc/2025-12-03T11-14-29-504Z-0c12bdc8-chat-image-1764760469486-0.jpg" 
+                     alt="Paytm QR Code" 
+                     class="qr-code">
+                <div class="payment-info">
+                    <p><strong>UPI ID:</strong> paytm.s1s9bhs@pty</p>
+                    <p>पेमेंट केल्यानंतर कृपया स्क्रीनशॉट पाठवा</p>
                 </div>
             </div>
-        </div>
-        
-        <div class="section">
-            <h2>⏰ वेळापत्रक</h2>
-            <div class="timing-box">
-                <h3>दुकान उघडण्याची वेळ:</h3>
-                <p><strong>सकाळी 7:00 AM ते रात्री 10:00 PM</strong></p>
-                <p style="margin-top: 0.5rem;">✅ सर्व दिवस उघडं (सुट्टी नाही)</p>
+            
+            <div class="contact">
+                <h2>📞 संपर्क</h2>
+                <div class="contact-info">
+                    <p>📱 मोबाईल: <a href="tel:+919876543210">+91 98765 43210</a></p>
+                    <p>📧 ईमेल: <a href="mailto:vidisha.vadewale@gmail.com">vidisha.vadewale@gmail.com</a></p>
+                    <p>📍 पत्ता: तुमचा पत्ता येथे</p>
+                </div>
+                <a href="tel:+919876543210" class="order-btn">आता ऑर्डर करा 📲</a>
             </div>
-        </div>
-        
-        <div class="section">
-            <h2>📍 आमचं ठिकाण</h2>
-            <p style="font-size: 1.1rem; line-height: 1.8;"><strong>पत्ता:</strong><br>
-            SHOP NO 1, M I T COLLEGE JAVAL,<br>
-            VAKHAR MAHAMANDAL CHYA GODOUN SOMOR,<br>
-            BEED BYE PASS ROAD, M I T COLLEGE UDANPUL CHYA BAJULA,<br>
-            छत्रपती संभाजीनगर (AURANGABAD), MAHARASHTRA - 431005</p>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.8447891234567!2d75.3160087!3d19.8522523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb99d99f47f54d%3A0xd87c31706a7893b9!2sVIDISHA%20WADEWALE!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-        
-        <div class="section" style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border: 2px solid #ff9800;">
-            <h2>✨ आमच्याबद्दल</h2>
-            <p style="font-size: 1.1rem; line-height: 1.8;">
-                <strong>विदेशा वडावाले</strong> छत्रपती संभाजीनगर मधील सर्वोत्तम वडापाव आणि स्ट्रीट फूड चं ठिकाण आहे. आम्ही ताज्या आणि दर्जेदार पदार्थ तयार करतो. आमचा वडापाव खूपच मसालेदार आणि चवदार आहे!
-            </p>
-            <p style="font-size: 1.1rem; margin-top: 1rem; line-height: 1.8;">
-                <strong>"देवा शेला वडापाव"</strong> - आमचा खास tagline! <strong>"Ekdum कड़क"</strong> चव आणि <strong>"क्या मस्त है"</strong> अनुभव घ्या!
-            </p>
         </div>
     </div>
-    
-    <div class="footer">
-        <p><strong>विदेशा वडावाले</strong></p>
-        <p>📞 +91 9860 5641 65 | 📧 divekamal922@gmail.com</p>
-        <p>📍 Shop No 1, M I T College Javal, Beed Bye Pass Road, छत्रपती संभाजीनगर - 431005</p>
-        <p style="margin-top: 1rem; opacity: 0.8;">© 2025 विदेशा वडावाले. All Rights Reserved.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.7;">Website created with ❤️ by Bhindi</p>
-    </div>
-
-    <script>
-        let cart = {};
-        let quantities = {};
-
-        function changeQuantity(item, change) {
-            if (!quantities[item]) quantities[item] = 0;
-            quantities[item] = Math.max(0, quantities[item] + change);
-            document.getElementById('qty-' + item).textContent = quantities[item];
-        }
-
-        function addToCart(item, price) {
-            const qty = quantities[item] || 0;
-            if (qty === 0) {
-                alert('कृपया quantity select करा!');
-                return;
-            }
-            
-            if (cart[item]) {
-                cart[item].quantity += qty;
-            } else {
-                cart[item] = { price: price, quantity: qty };
-            }
-            
-            quantities[item] = 0;
-            document.getElementById('qty-' + item).textContent = 0;
-            
-            updateCartDisplay();
-            alert(item + ' cart मध्ये add झालं! ✅');
-        }
-
-        function updateCartDisplay() {
-            const cartCount = document.getElementById('cartCount');
-            const cartItems = document.getElementById('cartItems');
-            const cartTotal = document.getElementById('cartTotal');
-            
-            let totalItems = 0;
-            let totalPrice = 0;
-            let html = '';
-            
-            for (let item in cart) {
-                totalItems += cart[item].quantity;
-                totalPrice += cart[item].price * cart[item].quantity;
-                html += `
-                    <div class="cart-item">
-                        <div class="cart-item-details">
-                            <div class="cart-item-name">${item}</div>
-                            <div class="cart-item-price">₹${cart[item].price} × ${cart[item].quantity} = ₹${cart[item].price * cart[item].quantity}</div>
-                        </div>
-                        <button class="cart-item-remove" onclick="removeFromCart('${item}')">काढा</button>
-                    </div>
-                `;
-            }
-            
-            cartCount.textContent = totalItems;
-            cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
-            
-            if (html === '') {
-                cartItems.innerHTML = '<div class="empty-cart">🛒 Cart रिकामी आहे</div>';
-            } else {
-                cartItems.innerHTML = html;
-            }
-            
-            cartTotal.textContent = 'एकूण: ₹' + totalPrice;
-        }
-
-        function removeFromCart(item) {
-            delete cart[item];
-            updateCartDisplay();
-        }
-
-        function toggleCart() {
-            const modal = document.getElementById('cartModal');
-            modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
-        }
-
-        function checkout() {
-            if (Object.keys(cart).length === 0) {
-                alert('कृपया items add करा!');
-                return;
-            }
-            
-            let message = '🍔 *विदेशा वडावाले - नवीन ऑर्डर*%0A%0A';
-            let total = 0;
-            
-            for (let item in cart) {
-                message += `${item}: ${cart[item].quantity} × ₹${cart[item].price} = ₹${cart[item].price * cart[item].quantity}%0A`;
-                total += cart[item].price * cart[item].quantity;
-            }
-            
-            message += `%0A*एकूण: ₹${total}*%0A%0Aकृपया ऑर्डर confirm करा!`;
-            
-            window.open('https://wa.me/919860564165?text=' + message, '_blank');
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('cartModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-    </script>
 </body>
 </html>
