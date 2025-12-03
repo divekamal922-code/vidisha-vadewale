@@ -3,268 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>विदिशा वडेवाले - घरगुती पदार्थ</title>
+    <title>विदिशा वडेवाले</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
             padding: 20px;
+            background-color: #f5f5f5;
         }
-        
         .container {
             max-width: 800px;
             margin: 0 auto;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-        
-        .content {
-            padding: 40px 30px;
-        }
-        
-        .menu-item {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .menu-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        
-        .menu-item h2 {
-            color: #d63031;
-            margin-bottom: 10px;
-            font-size: 1.8em;
-        }
-        
-        .menu-item p {
-            color: #2d3436;
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-        
-        .price {
-            color: #00b894;
-            font-weight: bold;
-            font-size: 1.3em;
-            margin-top: 10px;
-        }
-
-        .payment-section {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
             padding: 30px;
-            margin: 30px 0;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
-        .payment-section h2 {
+        h1 {
             color: #d63031;
-            margin-bottom: 20px;
-            font-size: 1.8em;
+            text-align: center;
         }
-
-        .qr-code {
+        .notice {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .notice p {
+            margin: 5px 0;
+            color: #856404;
+            font-weight: bold;
+        }
+        .payment {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .payment img {
             max-width: 300px;
             width: 100%;
-            height: auto;
-            margin: 20px auto;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
-
-        .payment-info {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        .payment-info p {
-            color: #2d3436;
-            font-size: 1.1em;
-            margin: 10px 0;
-            line-height: 1.6;
-        }
-
-        .important-note {
-            background: #fff3cd;
-            border-left: 5px solid #ffc107;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-        }
-
-        .important-note h3 {
-            color: #856404;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-
-        .important-note p {
-            color: #856404;
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin: 8px 0;
-        }
-
-        .important-note strong {
-            color: #d63031;
-        }
-        
         .contact {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            padding: 30px;
             text-align: center;
-            border-radius: 15px;
             margin-top: 30px;
-        }
-        
-        .contact h2 {
-            color: #d63031;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-        }
-        
-        .contact-info {
-            font-size: 1.2em;
-            color: #2d3436;
-            margin: 10px 0;
-        }
-        
-        .contact-info a {
-            color: #0984e3;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        .order-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.2em;
-            margin-top: 20px;
-            transition: transform 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .order-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-        }
-        
-        @media (max-width: 600px) {
-            .header h1 {
-                font-size: 2em;
-            }
-            
-            .menu-item h2 {
-                font-size: 1.5em;
-            }
-            
-            .content {
-                padding: 20px 15px;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🍽️ विदिशा वडेवाले 🍽️</h1>
-            <p>घरगुती चविष्ट पदार्थ</p>
-        </div>
+        <h1>विदिशा वडेवाले</h1>
         
-        <div class="content">
-            <div class="menu-item">
-                <h2>🥟 वडे</h2>
-                <p>ताजे आणि कुरकुरीत घरगुती वडे</p>
-                <p class="price">₹ किंमत संपर्कासाठी</p>
-            </div>
-            
-            <div class="menu-item">
-                <h2>🍪 चकली</h2>
-                <p>पारंपरिक पद्धतीने बनवलेली चवदार चकली</p>
-                <p class="price">₹ किंमत संपर्कासाठी</p>
-            </div>
-            
-            <div class="menu-item">
-                <h2>🥠 करंजी</h2>
-                <p>गोड आणि चवदार करंजी</p>
-                <p class="price">₹ किंमत संपर्कासाठी</p>
-            </div>
-            
-            <div class="menu-item">
-                <h2>🍬 इतर पदार्थ</h2>
-                <p>विविध प्रकारचे घरगुती फराळ आणि मिठाई</p>
-                <p class="price">₹ किंमत संपर्कासाठी</p>
-            </div>
+        <div class="notice">
+            <p>⚠️ कृपया ऑर्डर कन्फर्म करण्यासाठी आम्हाला कॉल करा</p>
+            <p>💳 पेमेंट करूनच ऑर्डर कन्फर्म होईल</p>
+        </div>
 
-            <div class="important-note">
-                <h3>⚠️ महत्वाची सूचना</h3>
-                <p><strong>📞 कृपया ऑर्डर कन्फर्म करण्यासाठी आम्हाला कॉल करा</strong></p>
-                <p><strong>💳 पेमेंट करूनच ऑर्डर कन्फर्म होईल</strong></p>
-            </div>
+        <div class="payment">
+            <h2>पेमेंट करा</h2>
+            <p>Paytm QR Code स्कॅन करा</p>
+            <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/66cb6bb8-daa3-473a-a1af-b4b3010e8fcc/2025-12-03T11-14-29-504Z-0c12bdc8-chat-image-1764760469486-0.jpg" alt="Paytm QR Code">
+            <p><strong>UPI ID:</strong> paytm.s1s9bhs@pty</p>
+        </div>
 
-            <div class="payment-section">
-                <h2>💳 पेमेंट करा</h2>
-                <p style="color: #2d3436; font-size: 1.1em; margin-bottom: 15px;">
-                    खालील Paytm QR Code स्कॅन करून पेमेंट करा
-                </p>
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/66cb6bb8-daa3-473a-a1af-b4b3010e8fcc/2025-12-03T11-14-29-504Z-0c12bdc8-chat-image-1764760469486-0.jpg" 
-                     alt="Paytm QR Code" 
-                     class="qr-code">
-                <div class="payment-info">
-                    <p><strong>UPI ID:</strong> paytm.s1s9bhs@pty</p>
-                    <p>पेमेंट केल्यानंतर कृपया स्क्रीनशॉट पाठवा</p>
-                </div>
-            </div>
-            
-            <div class="contact">
-                <h2>📞 संपर्क</h2>
-                <div class="contact-info">
-                    <p>📱 मोबाईल: <a href="tel:+919876543210">+91 98765 43210</a></p>
-                    <p>📧 ईमेल: <a href="mailto:vidisha.vadewale@gmail.com">vidisha.vadewale@gmail.com</a></p>
-                    <p>📍 पत्ता: तुमचा पत्ता येथे</p>
-                </div>
-                <a href="tel:+919876543210" class="order-btn">आता ऑर्डर करा 📲</a>
-            </div>
+        <div class="contact">
+            <h2>संपर्क</h2>
+            <p>📞 आमच्याशी संपर्क साधा</p>
         </div>
     </div>
 </body>
